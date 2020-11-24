@@ -46,7 +46,6 @@ function EditReserve() {
             .then(response => {
                 if (response.status == 200) {
                     response.json().then(data => {
-                        console.log(JSON.stringify(data))
                         commentsState(data[0].comments)
                         startDateState(moment(data[0].date,'YYYY-MM-DD'))
                         classesState(data[0].class)

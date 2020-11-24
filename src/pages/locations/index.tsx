@@ -61,7 +61,6 @@ function Locations() {
     }
 
     useEffect(() => {
-        console.log(page)
         handleWithPageLoad()
     }, ['loading',page])
 

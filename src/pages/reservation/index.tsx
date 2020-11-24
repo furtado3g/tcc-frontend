@@ -67,7 +67,6 @@ function Reservation() {
                 id: item.id
               }
             })
-            console.log(events)
             eventState(events)
           })
         } else {

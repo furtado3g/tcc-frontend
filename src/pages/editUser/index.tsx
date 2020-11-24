@@ -69,9 +69,6 @@ function EditUser() {
           responseTypeState(error || message);
         }
       })
-      .catch((e) => {
-        console.log(e);
-      });
   }
 
   async function handleWithUserSelected(userId: string) {

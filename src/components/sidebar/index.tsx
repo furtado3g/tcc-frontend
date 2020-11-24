@@ -34,7 +34,6 @@ function Menu() {
             })
             .then(result => {
                 const { user_type } = result
-                console.log(user_type)
                 user_typeState(user_type)
             })
     }

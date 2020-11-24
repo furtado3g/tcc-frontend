@@ -69,7 +69,6 @@ function EditLocation() {
       .then(response => {
         if (response.status == 200) {
           response.json().then(data => {
-            console.log(data)
             const { message, error } = data
             if (error) {
               addToast(error, {

@@ -132,7 +132,6 @@ function PerUser() {
                     reservesState([])
                 }
             }).catch(e => {
-                console.log(e)
                 reservesState([])
             })
     }
