@@ -114,7 +114,6 @@ function PerPeriod() {
             <Modal
                 centered={false}
                 open={modal}
-                size='small'
                 onClose={() => modalState(false)}
                 onOpen={() => modalState(true)}
             >
