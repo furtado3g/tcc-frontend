@@ -45,7 +45,6 @@ function EditMyInfo() {
         .then((res)=>{
             addToast(res.message,{appearance: 'success', autoDismiss: true});
         })
-        .catch((err)=>{console.log(err)})
     }
 
     async function handleWithPageLoad() {
@@ -74,7 +73,6 @@ function EditMyInfo() {
     }
 
     useEffect(()=>{
-        console.log(1)
         handleWithPageLoad()
     },['loading'])
 

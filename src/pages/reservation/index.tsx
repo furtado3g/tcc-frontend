@@ -67,7 +67,6 @@ function Reservation() {
                 id: item.id
               }
             })
-            console.log(events)
             eventState(events)
           })
         } else {
@@ -211,7 +210,7 @@ function Reservation() {
         <Modal.Header>{eventModal.class} - {eventModal.discipline}</Modal.Header>
         <Modal.Content>
           <Container text textAlign='justified'>
-            <h5>
+            <h3>
               Turma : <b>{eventModal.class}</b> <br />
               Disciplina : {eventModal.discipline} <br />
               Data : {moment(eventModal.date, 'YYYY-MM-DD').calendar()} <br />
@@ -219,10 +218,10 @@ function Reservation() {
               Termino : {eventModal.time_end} <br />
               Local : {eventModal.location_id} - {eventModal.location_name} <br />
               Colaborador : {eventModal.teacher_id} - {eventModal.user_name} <br />
-            </h5>
-            <h4>
+            </h3>
+            <h3>
               {eventModal.comments}
-            </h4>
+            </h3>
           </Container>
         </Modal.Content>
         <Modal.Actions>

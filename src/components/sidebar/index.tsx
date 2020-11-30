@@ -34,7 +34,6 @@ function Menu() {
             })
             .then(result => {
                 const { user_type } = result
-                console.log(user_type)
                 user_typeState(user_type)
             })
     }
@@ -91,7 +90,11 @@ function Menu() {
                         <h4 className="icon-text hidden">Início</h4>
                     </a>
                 </div>
-                {isAdmin(user_type)}
+                {
+                    //VERIFICA SE O USUARIO É ADMINSTRADOR OU NÃO
+                    //SE FOR O MESMO EXIBE O PAINEL DE ADMIN
+                    isAdmin(user_type)
+                }
                 <div className="sidebar-item">
                     <a onClick={() => { handleWithRedirect("/reserves") }}>
                         <img src={CalendarIcon} alt="Icon for admin" />
@@ -99,9 +102,9 @@ function Menu() {
                     </a>
                 </div>
                 <div className="sidebar-item">
-                    <a onClick={() => { handleWithRedirect("/history") }}>
+                    <a onClick={() => { handleWithRedirect("/reports") }}>
                         <img src={TextIcon} alt="Icon for admin" />
-                        <h4 className="icon-text hidden">Histórico</h4>
+                        <h4 className="icon-text hidden">Relatórios</h4>
                     </a>
                 </div>
                 <div className="sidebar-item">

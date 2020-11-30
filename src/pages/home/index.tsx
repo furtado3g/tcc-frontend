@@ -38,7 +38,6 @@ function Home() {
               }
             })
             eventState(events)
-            console.log(JSON.stringify(events))
           })
         } else {
           response.json().then(data => {

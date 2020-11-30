@@ -132,7 +132,6 @@ function PerUser() {
                     reservesState([])
                 }
             }).catch(e => {
-                console.log(e)
                 reservesState([])
             })
     }
@@ -238,7 +237,6 @@ function PerUser() {
             <Modal
                 centered={false}
                 open={modal}
-                size='small'
                 onClose={() => modalState(false)}
                 onOpen={() => modalState(true)}
             >
