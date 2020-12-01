@@ -10,6 +10,7 @@ import moment from 'moment'
 import 'moment/locale/pt-br';
 import locale from 'antd/es/date-picker/locale/pt_BR'
 import { useToasts } from 'react-toast-notifications'
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 function PerLocation() {
     const [page, pageState] = useState(0)
     const [maxPages, maxPagesState] = useState(0)
@@ -102,6 +103,27 @@ function PerLocation() {
             })
     }
 
+    const getMuiTheme = () => createMuiTheme({
+        overrides: {
+            MuiTypography: {
+                root: {
+                    fontSize: "1.2rem !important"
+                }
+            },
+            MuiTableCell: {
+                root: {
+                    fontSize: "1.2rem !important"
+                }
+            },
+            MuiTableBody: {
+                root: {
+                    fontSize: "1.2rem !important"
+                }
+            }
+        }
+    })
+
+
     function handleNextPage() {
         pageState(page + 1)
     }
@@ -122,7 +144,7 @@ function PerLocation() {
         <div className="container-admin">
             <Sidebar />
             <Panel title="Relatórios">
-                <ReportsSidebar/>
+                <ReportsSidebar />
                 <div className="panel-content">
                     <div className="row">
                         <h2 className="page-name">Locais</h2>
@@ -214,15 +236,17 @@ function PerLocation() {
                     <Modal.Description>
                         <div className="row">
                             <div className="col-12">
-                                <MUIDataTable
-                                    title={"Reservas por local e periodo"}
-                                    data={reserves}
-                                    columns={columns}
-                                    options={{
-                                        filter: true,
-                                        filterType: "dropdown",
-                                    }}
-                                />
+                                <MuiThemeProvider theme={getMuiTheme()}>
+                                    <MUIDataTable
+                                        title={"Reservas por local e periodo"}
+                                        data={reserves}
+                                        columns={columns}
+                                        options={{
+                                            filter: true,
+                                            filterType: "dropdown",
+                                        }}
+                                    />
+                                </MuiThemeProvider>
                             </div>
                         </div>
                     </Modal.Description>

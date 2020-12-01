@@ -9,7 +9,7 @@ import { DatePicker } from 'antd'
 import moment from 'moment'
 import 'moment/locale/pt-br';
 import locale from 'antd/es/date-picker/locale/pt_BR'
-
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 function PerUser() {
     const [page, pageState] = useState(0)
     const [maxPages, maxPagesState] = useState(0)
@@ -71,6 +71,27 @@ function PerUser() {
             }
         },
     ];
+
+    const getMuiTheme = () => createMuiTheme({
+        overrides: {
+            MuiTypography: {
+                root: {
+                    fontSize: "1.2rem !important"
+                }
+            },
+            MuiTableCell:{
+                root : {
+                    fontSize: "1.2rem !important"
+                }
+            },
+            MuiTableBody:{
+                root :{
+                    fontSize: "1.2rem !important"
+                }
+            }
+        }
+    })
+
     async function handleWithPageLoad() {
         const data = {
             url: `${baseUrl}/users?page=` + page + "&perPage=5",
@@ -244,6 +265,8 @@ function PerUser() {
                     <Modal.Description>
                         <div className="row">
                             <div className="col-12">
+                                <MuiThemeProvider theme={getMuiTheme()}>
+
                                 <MUIDataTable
                                     title={"Reservas por usuário e periodo"}
                                     data={reserves}
@@ -253,6 +276,7 @@ function PerUser() {
                                         filterType: "dropdown",
                                     }}
                                 />
+                                </MuiThemeProvider>
                             </div>
                         </div>
                     </Modal.Description>
