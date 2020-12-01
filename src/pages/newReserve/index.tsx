@@ -11,8 +11,6 @@ import PanelSidebar from "../../components/panel-sidebar";
 import PanelSidebarItem from "../../components/panel-sidebar-item";
 import Sidebar from "../../components/sidebar";
 import "./styles.css";
-import 'antd/dist/antd.css';
-import 'semantic-ui-css/semantic.min.css'
 import 'moment/locale/pt-br';
 
 function NewReserve() {

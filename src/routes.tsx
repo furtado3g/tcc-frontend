@@ -31,7 +31,7 @@ function Routes() {
             <Switch>
                 <Route exact={true} path="/" component={Login} />
                 <Route exact={true} path="/forgot" component={ForgotPassword} />
-                <Route exact={true} path="/home" component={Home} />
+                <Route exact={true} path="/home" component={Reservation} />
                 <Route exact={true} path="/admin" component={Admin} />
                 <Route exact={true} path="/user/add" component={NewUser} />
                 <Route exact={true} path="/changePassword" component={ChangePassword} />

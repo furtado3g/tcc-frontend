@@ -96,12 +96,6 @@ function Menu() {
                     isAdmin(user_type)
                 }
                 <div className="sidebar-item">
-                    <a onClick={() => { handleWithRedirect("/reserves") }}>
-                        <img src={CalendarIcon} alt="Icon for admin" />
-                        <h4 className="icon-text hidden">Reservas</h4>
-                    </a>
-                </div>
-                <div className="sidebar-item">
                     <a onClick={() => { handleWithRedirect("/reports") }}>
                         <img src={TextIcon} alt="Icon for admin" />
                         <h4 className="icon-text hidden">Relatórios</h4>

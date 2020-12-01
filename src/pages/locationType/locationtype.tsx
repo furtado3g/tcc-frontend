@@ -4,7 +4,6 @@ import Panel from "../../components/panel";
 import Sidebar from "../../components/sidebar";
 import LocationTypeTable from "../../components/locationtype-table"
 import { useHistory} from "react-router-dom"
-import "semantic-ui-css/semantic.min.css";
 import {baseUrl} from '../../config/url.json'
 
 function TypeLocation() {

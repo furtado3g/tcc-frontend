@@ -3,7 +3,7 @@ import { Table } from "semantic-ui-react";
 import { useHistory } from "react-router-dom";
 import { useToasts } from 'react-toast-notifications'
 import { baseUrl } from '../../config/url.json'
-import { Button, Icon, Modal } from 'semantic-ui-react'
+import { Button,  Modal } from 'semantic-ui-react'
 
 function LocationTable(props: any) {
   const History = useHistory();
@@ -129,11 +129,13 @@ function LocationTable(props: any) {
         <Modal.Header>Excluir Espaço</Modal.Header>
         <Modal.Content>
           <Modal.Description>
-            Deseja realmente excluir o Local?
+            <h3>
+              Deseja realmente excluir o Local?
+            </h3>
           </Modal.Description>
         </Modal.Content>
         <Modal.Actions>
-          <Button onClick={() => {handleWithDelete(locationId);modalState(false)}}>Confirmar</Button>
+          <Button onClick={() => { handleWithDelete(locationId); modalState(false) }}>Confirmar</Button>
           <Button color="black" onClick={() => modalState(false)}>Sair</Button>
         </Modal.Actions>
       </Modal>

@@ -76,7 +76,7 @@ function LocationTypeTable(props: any) {
                                                 <i className="far fa-edit margin-icon"></i>
                                             Editar
                                         </button>
-                                            <button className="btn btn-light" onClick={e => {locationTypeState(item.id);modalState(true)}}>
+                                            <button className="btn btn-light" onClick={e => { locationTypeState(item.id); modalState(true) }}>
                                                 <i className="far fa-trash-alt margin-icon"></i>
                                             Excluir
                                         </button>
@@ -104,11 +104,13 @@ function LocationTypeTable(props: any) {
                 <Modal.Header>Excluir Tipo Espaço</Modal.Header>
                 <Modal.Content>
                     <Modal.Description>
-                        Deseja realmente excluir o tipo de Local?
-          </Modal.Description>
+                        <h3>
+                            Deseja realmente excluir o tipo de Local?
+                        </h3>
+                    </Modal.Description>
                 </Modal.Content>
                 <Modal.Actions>
-                    <Button onClick={() => {handleWithDelete(locationType);modalState(false)}}>Confirmar</Button>
+                    <Button onClick={() => { handleWithDelete(locationType); modalState(false) }}>Confirmar</Button>
                     <Button color="black" onClick={() => modalState(false)}>Sair</Button>
                 </Modal.Actions>
             </Modal>

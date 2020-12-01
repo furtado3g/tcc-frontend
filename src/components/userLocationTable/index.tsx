@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { baseUrl } from '../../config/url.json'
 import { useToasts } from 'react-toast-notifications'
-import { Table,Button, Icon, Modal } from 'semantic-ui-react'
+import { Table, Button, Icon, Modal } from 'semantic-ui-react'
 
 function UserLocationTable(props: any) {
 
@@ -97,13 +97,15 @@ function UserLocationTable(props: any) {
             >
                 <Modal.Header>Excluir Espaço</Modal.Header>
                 <Modal.Content>
-                <Modal.Description>
-                    Deseja realmente excluir o Local?
-                </Modal.Description>
+                    <Modal.Description>
+                        <h3>
+                            Deseja realmente excluir o Local?
+                       </h3>
+                    </Modal.Description>
                 </Modal.Content>
                 <Modal.Actions>
-                <Button onClick={() => {handleWithDelete(userLocationId);modalState(false)}}>Confirmar</Button>
-                <Button color="black" onClick={() => modalState(false)}>Sair</Button>
+                    <Button onClick={() => { handleWithDelete(userLocationId); modalState(false) }}>Confirmar</Button>
+                    <Button color="black" onClick={() => modalState(false)}>Sair</Button>
                 </Modal.Actions>
             </Modal>
         </>
