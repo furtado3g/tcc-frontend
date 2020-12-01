@@ -86,7 +86,7 @@ header p{
 }
 
 .btn-login:hover{
-    opacity: 70%;
+    opacity: 70% !important;
 }
 
 .btn-forgot{
@@ -99,7 +99,7 @@ header p{
 }
 
 .btn-forgot:hover{
-    opacity: 70%;
+    opacity: 70% !important;
 }
 
 .alert {
