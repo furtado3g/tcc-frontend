@@ -120,7 +120,10 @@ function EditReserve() {
                 })
             },
         }
-        await fetch(data.url, data.options)
+        if(startTime >= endTime){
+            return addToast("Horário de inicio deve ser menor que o horário de termino")
+        }
+        return await fetch(data.url, data.options)
             .then(response => {
                 if (response.status == 200) {
                     response.json().then(data => {

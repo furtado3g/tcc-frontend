@@ -7,6 +7,7 @@ import AdminPanelSidebar from "../../components/admin-panel-sidebar";
 import { useToasts } from 'react-toast-notifications'
 import { useHistory } from 'react-router-dom'
 import { baseUrl } from '../../config/url.json'
+import { error } from "console";
 
 function EditUser() {
   const sessionToken = localStorage.getItem("sessionToken");
@@ -18,7 +19,7 @@ function EditUser() {
   const [email, emailState] = useState("");
   const [userType, userTypeState] = useState("");
   const [response, responseTypeState] = useState("");
-  const { id }:any = useParams(); // eslint-disable-line no-eval
+  const { id }: any = useParams(); // eslint-disable-line no-eval
   const { addToast } = useToasts()
   const History = useHistory();
 
@@ -57,17 +58,14 @@ function EditUser() {
     };
     await fetch(data.url, data.options)
       .then(async (data) => {
-        const { message, error } = await data.json();
-        if (data.status >= 200 && data.status < 300) {
+        await data.json().then(data => {
+          const { message, error } = data
           handleWithAlerts();
-          responseTypeState(message);
-          setTimeout(() => {
-            History.go(-1)
-          }, 5000);
-        } else {
-          handleWithAlerts();
-          responseTypeState(error || message);
-        }
+          responseTypeState(message || error);
+        })
+        setTimeout(() => {
+          History.go(-1)
+        }, 5000);
       })
   }
 
