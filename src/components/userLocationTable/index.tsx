@@ -82,7 +82,7 @@ function UserLocationTable(props: any) {
                         }
                         return (
                             <Table.Row>
-                                <Table.Cell>Nenhum usuário encontrado</Table.Cell>
+                                <Table.Cell>Nenhum Espaço associado ao usuário</Table.Cell>
                             </Table.Row>
                         );
                     })()}

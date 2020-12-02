@@ -132,6 +132,7 @@ function EditUser() {
                 type="text"
                 className="form-control"
                 id="userName"
+                disabled={true}
                 value={username}
                 onChange={(e) => usernameState(e.target.value)}
               />
